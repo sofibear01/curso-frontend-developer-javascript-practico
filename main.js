@@ -3,33 +3,33 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const carritoIcon = document.querySelector('.navbar-shopping-cart');
-const carritoProductos = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu); //toggle seria como intercambiar, para indicar que se muestra y se esconde tambien
 menuHamIcon.addEventListener('click', toggleMobileMenu);
-carritoIcon.addEventListener('click', togglecarritoProductos);
+carritoIcon.addEventListener('click', toggleCarritoAside);
 
 function toggleDesktopMenu(){
-    const isCarritoProductosClosed = carritoProductos.classList.contains('inactive');
+    const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
 
-    if (!isCarritoProductosClosed){
-        carritoProductos.classList.toggle('inactive');
+    if (!isAsideClosed){
+        shoppingCartContainer.classList.toggle('inactive');
     }
     desktopMenu.classList.toggle('inactive'); //esto quita o pone la clase inactive 
 }
 
 function toggleMobileMenu(){
-    const isCarritoProductosClosed = carritoProductos.classList.contains('inactive');
+    const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
 
-    if (!isCarritoProductosClosed){
-        carritoProductos.classList.toggle('inactive');
+    if (!isAsideClosed){
+        shoppingCartContainer.classList.toggle('inactive');
     }
     mobileMenu.classList.toggle('inactive');
 
 }
 
-function togglecarritoProductos(){
+function toggleCarritoAside(){
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
     const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
 
@@ -39,7 +39,7 @@ function togglecarritoProductos(){
     if(!isDesktopMenuClosed){
         desktopMenu.classList.add('inactive');
     }
-    carritoProductos.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
 }
 
 const productList = [];
